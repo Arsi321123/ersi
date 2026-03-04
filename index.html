@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Ersi</title>
+</head>
+
+<body style="margin:0; font-family: Arial, sans-serif; background-color:#fff5eb;">
+
+  <!-- HEADER / NAVIGATION -->
+  <div style="background-color:#cc0000; color:white; padding:20px; text-align:center;">
+    <h1 style="margin:0;">🍕 Pizza Ersi</h1>
+    <p style="margin:8px 0 0 0;">Shija që të bën të rikthehesh perseri!</p>
+
+    <!-- Navigation Links -->
+    <div style="margin-top:15px;">
+      <a href="#rreth-nesh" style="color:white; margin:10px; text-decoration:none; font-weight:bold;">Rreth Nesh</a>
+      <a href="#menu" style="color:white; margin:10px; text-decoration:none; font-weight:bold;">Menu</a>
+      <a href="#porosit" style="color:white; margin:10px; text-decoration:none; font-weight:bold;">Porosit</a>
+      <a href="#kontakt" style="color:white; margin:10px; text-decoration:none; font-weight:bold;">Kontakt</a>
+    </div>
+  </div>
+
+  <!-- IMAGE -->
+  <div style="text-align:center; padding:30px;">
+    <img
+      src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+      width="600"
+      style="max-width:92%; height:auto; border-radius:20px; box-shadow:0 6px 15px gray;"
+      alt="Pizza e fresket"
+    />
+  </div>
+
+  <!-- RRETH NESH -->
+  <div id="rreth-nesh" style="padding:30px; text-align:center;">
+    <h2 style="color:#cc0000;">Rreth Nesh</h2>
+    <p style="max-width:900px; width:90%; margin:auto; line-height:1.6;">
+      Pizza Ersi është një pizzeri moderne që ofron pica të përgatitura
+      me produkte të freskëta dhe receta tradicionale italiane.
+      Qëllimi ynë është të ofrojmë cilësi të lartë, shërbim të shpejtë
+      dhe një ambient mikpritës për të gjithë klientët.
+    </p>
+
+    <p style="max-width:900px; width:90%; margin:14px auto 0 auto; line-height:1.6;">
+      Ne vazhdojmë të rritemi çdo ditë duke sjellë shije të reja,
+      oferta speciale dhe shërbim delivery për të kënaqur klientët tanë.
+    </p>
+
+    <!-- JS feature: live open/closed badge -->
+    <div style="margin-top:18px;">
+      <span id="statusBadge"
+        style="display:inline-block; padding:10px 14px; border-radius:999px; background:#fff; color:#cc0000; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.15);">
+        Duke kontrolluar orarin...
+      </span>
+      <div style="margin-top:8px; color:#6b0b0b;">
+        Orari: Hën–Die • 11:00–23:00
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <div id="menu" style="background-color:white; margin:30px; padding:25px; border-radius:20px; box-shadow:0 4px 12px lightgray;">
+    <h2 style="text-align:center; color:#cc0000; margin-top:0;">Menuja</h2>
+
+    <table style="width:100%; text-align:center; border-collapse: collapse; font-size:16px;">
+      <tr style="background-color:#ffe6e6;">
+        <th style="padding:12px;">Pica</th>
+        <th style="padding:12px;">Përbërës</th>
+        <th style="padding:12px;">Çmimi</th>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;">Margherita</td>
+        <td style="padding:10px;">Djathë mozzarella, salcë domate, borzilok</td>
+        <td style="padding:10px;">500 Lek</td>
+      </tr>
+
+      <tr style="background-color:#f9f9f9;">
+        <td style="padding:10px;">Capricciosa</td>
+        <td style="padding:10px;">Proshutë, kërpudha, djathë, salcë domate</td>
+        <td style="padding:10px;">600 Lek</td>
+      </tr>
+
+      <tr>
+        <td style="padding:10px;">4 Djathra</td>
+        <td style="padding:10px;">Mozzarella, Gorgonzola, Parmezan, Cheddar</td>
+        <td style="padding:10px;">650 Lek</td>
+      </tr>
+
+      <tr style="background-color:#f9f9f9;">
+        <td style="padding:10px;">Proshute & Kerpudha</td>
+        <td style="padding:10px;">Proshutë, kërpudha, djathë mozzarella, salcë domate</td>
+        <td style="padding:10px;">700 Lek</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- POROSIT (JavaScript feature: order calculator + fake receipt) -->
+  <div id="porosit" style="background-color:white; margin:30px; padding:25px; border-radius:20px; box-shadow:0 4px 12px lightgray;">
+    <h2 style="text-align:center; color:#cc0000; margin-top:0;">Porosit Online</h2>
+
+    <div style="max-width:900px; margin:0 auto; display:flex; gap:18px; flex-wrap:wrap; justify-content:center;">
+      <div style="flex:1; min-width:260px; text-align:left;">
+        <label style="font-weight:bold;">Zgjidh picën</label><br/>
+        <select id="pizzaSelect" style="margin-top:8px; width:100%; padding:10px; border-radius:10px; border:1px solid #ddd;">
+          <option value="Margherita" data-price="500">Margherita — 500 Lek</option>
+          <option value="Capricciosa" data-price="600">Capricciosa — 600 Lek</option>
+          <option value="4 Djathra" data-price="650">4 Djathra — 650 Lek</option>
+          <option value="Proshute & Kerpudha" data-price="700">Proshute & Kerpudha — 700 Lek</option>
+        </select>
+
+        <label style="font-weight:bold; display:block; margin-top:14px;">Sasia</label>
+        <input id="qtyInput" type="number" min="1" value="1"
+          style="margin-top:8px; width:100%; padding:10px; border-radius:10px; border:1px solid #ddd;"
+        />
+
+        <label style="font-weight:bold; display:block; margin-top:14px;">Delivery?</label>
+        <div style="margin-top:8px;">
+          <label style="margin-right:12px;"><input type="radio" name="delivery" value="no" checked /> Jo</label>
+          <label><input type="radio" name="delivery" value="yes" /> Po (+150 Lek)</label>
+        </div>
+
+        <button id="calcBtn"
+          style="margin-top:16px; background:#cc0000; color:white; border:none; padding:12px 16px; border-radius:12px; font-weight:bold; cursor:pointer;">
+          Llogarit totalin
+        </button>
+
+        <button id="orderBtn"
+          style="margin-top:10px; background:#990000; color:white; border:none; padding:12px 16px; border-radius:12px; font-weight:bold; cursor:pointer;">
+          Konfirmo porosinë
+        </button>
+      </div>
+
+      <div style="flex:1; min-width:260px; text-align:left;">
+        <div
+          style="background:#fff5eb; border:1px solid #ffd1d1; padding:16px; border-radius:16px;">
+          <div style="font-weight:bold; color:#cc0000;">Totali</div>
+          <div id="totalBox" style="font-size:28px; font-weight:bold; margin-top:10px;">—</div>
+          <div id="smallInfo" style="margin-top:10px; color:#6b0b0b;"></div>
+        </div>
+
+        <div id="receipt"
+          style="display:none; margin-top:14px; background:#ffffff; border:1px dashed #cc0000; padding:16px; border-radius:16px;">
+          <div style="font-weight:bold; color:#cc0000;">✅ Porosia u pranua</div>
+          <div id="receiptText" style="margin-top:10px; line-height:1.6;"></div>
+          <div style="margin-top:10px; font-size:13px; color:#666;">
+            * Për detyrë shkollore (demo). Nuk dërgon porosi reale.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KONTAKT -->
+  <div id="kontakt" style="background-color:#cc0000; color:white; padding:30px; text-align:center;">
+    <h2 style="margin-top:0;">Kontakt</h2>
+    <p><b>Qyteti:</b> Durrës</p>
+    <p><b>Email:</b> <a href="mailto:pizzaersi@gmail.com" style="color:white;">pizzaersi@gmail.com</a></p>
+    <p><b>Nr. Telefonit:</b> <a href="tel:+355691234567" style="color:white;">069 123 4567</a></p>
+
+    <!-- JS feature: quick contact form (local only) -->
+    <div style="max-width:720px; margin:18px auto 0 auto; background:rgba(255,255,255,0.12); padding:18px; border-radius:16px;">
+      <div style="font-weight:bold; margin-bottom:10px;">Na shkruaj (demo)</div>
+      <input id="nameInput" placeholder="Emri"
+        style="width:100%; padding:10px; border-radius:10px; border:none; margin-bottom:10px;" />
+      <textarea id="msgInput" placeholder="Mesazhi"
+        style="width:100%; padding:10px; border-radius:10px; border:none; min-height:90px;"></textarea>
+      <button id="sendBtn"
+        style="margin-top:10px; background:white; color:#cc0000; border:none; padding:12px 16px; border-radius:12px; font-weight:bold; cursor:pointer;">
+        Dërgo
+      </button>
+      <div id="sendStatus" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background-color:#990000; color:white; text-align:center; padding:15px;">
+    <p style="margin:0;">&copy; <span id="year"></span> Pizza Ersi - Të gjitha të drejtat e rezervuara</p>
+  </div>
+
+  <!-- Link JS file -->
+  <script src="./script.js"></script>
+</body>
+</html>
